@@ -1,0 +1,160 @@
+{
+  "scope": "aux4",
+  "name": "ai-skills",
+  "version": "1.0.0",
+  "description": "Install and manage AI agent skills from the open skills ecosystem",
+  "license": "Apache-2.0",
+  "tags": [
+    "ai",
+    "skills",
+    "agent"
+  ],
+  "system": [
+    [
+      "test:node --version",
+      "brew:node",
+      "linux:nodejs"
+    ]
+  ],
+  "profiles": [
+    {
+      "name": "main",
+      "commands": [
+        {
+          "name": "ai",
+          "execute": [
+            "profile:ai"
+          ],
+          "help": {
+            "text": "Artificial Intelligence"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ai",
+      "commands": [
+        {
+          "name": "skills",
+          "execute": [
+            "profile:ai:skills"
+          ],
+          "help": {
+            "text": "Manage AI agent skills"
+          }
+        }
+      ]
+    },
+    {
+      "name": "ai:skills",
+      "commands": [
+        {
+          "name": "add",
+          "execute": [
+            "npx -y skills add ${source} --path ${skillsDir}"
+          ],
+          "help": {
+            "text": "Install a skill from a repository or local path",
+            "variables": [
+              {
+                "name": "source",
+                "text": "Skill source (GitHub shorthand, URL, or local path)",
+                "arg": true
+              },
+              {
+                "name": "skillsDir",
+                "text": "Directory to install skills into",
+                "default": "skills"
+              }
+            ]
+          }
+        },
+        {
+          "name": "remove",
+          "execute": [
+            "npx -y skills remove ${name} --path ${skillsDir}"
+          ],
+          "help": {
+            "text": "Remove an installed skill",
+            "variables": [
+              {
+                "name": "name",
+                "text": "Name of the skill to remove",
+                "arg": true
+              },
+              {
+                "name": "skillsDir",
+                "text": "Directory where skills are installed",
+                "default": "skills"
+              }
+            ]
+          }
+        },
+        {
+          "name": "list",
+          "execute": [
+            "npx -y skills list --path ${skillsDir}"
+          ],
+          "help": {
+            "text": "List installed skills",
+            "variables": [
+              {
+                "name": "skillsDir",
+                "text": "Directory where skills are installed",
+                "default": "skills"
+              }
+            ]
+          }
+        },
+        {
+          "name": "find",
+          "execute": [
+            "npx -y skills find ${query}"
+          ],
+          "help": {
+            "text": "Search for skills in the registry",
+            "variables": [
+              {
+                "name": "query",
+                "text": "Search query",
+                "arg": true
+              }
+            ]
+          }
+        },
+        {
+          "name": "update",
+          "execute": [
+            "npx -y skills update --path ${skillsDir}"
+          ],
+          "help": {
+            "text": "Update installed skills to latest versions",
+            "variables": [
+              {
+                "name": "skillsDir",
+                "text": "Directory where skills are installed",
+                "default": "skills"
+              }
+            ]
+          }
+        },
+        {
+          "name": "init",
+          "execute": [
+            "npx -y skills init ${name}"
+          ],
+          "help": {
+            "text": "Create a new SKILL.md template",
+            "variables": [
+              {
+                "name": "name",
+                "text": "Name for the new skill",
+                "arg": true
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
