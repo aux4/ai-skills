@@ -35,7 +35,7 @@ aux4 ai agent ask "Review my code using the code-review skill"
 
 ### aux4 ai skills add
 
-Install a skill from a GitHub repository, URL, or local path into the `./skills/` directory.
+Install a skill from a GitHub repository, URL, or local path into the `.agents/skills/` directory.
 
 ```bash
 aux4 ai skills add <source>
@@ -119,18 +119,19 @@ For more details see [aux4 ai skills init](./commands/ai/skills/init).
 
 ## Skills Directory
 
-Skills are installed into `./skills/`. This is compatible with `aux4/ai-agent`, which reads skills from the same directory.
+Skills are installed into `.agents/skills/`. This is compatible with `aux4/ai-agent`, which reads skills from the same directory.
 
 ```
 my-project/
 ├── AGENTS.md
-├── skills/
-│   ├── code-review/
-│   │   └── SKILL.md
-│   ├── testing/
-│   │   └── SKILL.md
-│   └── deploy/
-│       └── SKILL.md
+├── .agents/
+│   └── skills/
+│       ├── code-review/
+│       │   └── SKILL.md
+│       ├── testing/
+│       │   └── SKILL.md
+│       └── deploy/
+│           └── SKILL.md
 └── config.yaml
 ```
 

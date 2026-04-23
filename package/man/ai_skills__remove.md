@@ -1,6 +1,6 @@
 #### Description
 
-Remove an installed skill from the `./skills/` directory.
+Remove an installed skill from the `.agents/skills/` directory.
 
 #### Usage
 

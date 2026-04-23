@@ -1,6 +1,6 @@
 #### Description
 
-List all skills currently installed in the `./skills/` directory. Shows skill names and descriptions from their `SKILL.md` frontmatter.
+List all skills currently installed in the `.agents/skills/` directory. Shows skill names and descriptions from their `SKILL.md` frontmatter.
 
 #### Usage
 
