@@ -5,10 +5,8 @@ Update all installed skills to their latest versions from their original sources
 #### Usage
 
 ```bash
-aux4 ai skills update [--skillsDir <path>]
+aux4 ai skills update
 ```
-
---skillsDir Directory where skills are installed (default: skills)
 
 #### Example
 

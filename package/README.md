@@ -18,8 +18,11 @@ Requires Node.js (for `npx`).
 # Search for available skills
 aux4 ai skills find "code review"
 
-# Install a skill pack
+# Install all skills from a repository
 aux4 ai skills add vercel-labs/agent-skills
+
+# Install a specific skill from a repository
+aux4 ai skills add anthropics/skills@skill-creator
 
 # List installed skills
 aux4 ai skills list
@@ -32,21 +35,22 @@ aux4 ai agent ask "Review my code using the code-review skill"
 
 ### aux4 ai skills add
 
-Install a skill from a GitHub repository, URL, or local path into the skills directory.
+Install a skill from a GitHub repository, URL, or local path into the `./skills/` directory.
 
 ```bash
-aux4 ai skills add <source> [--skillsDir <path>]
+aux4 ai skills add <source>
 ```
 
 Sources can be:
-- GitHub shorthand: `vercel-labs/agent-skills`
+- GitHub shorthand (all skills): `vercel-labs/agent-skills`
+- GitHub shorthand (specific skill): `anthropics/skills@skill-creator`
 - Full URL: `https://github.com/user/repo`
 - Local path: `./my-local-skills`
 
 ```bash
 aux4 ai skills add vercel-labs/agent-skills
+aux4 ai skills add anthropics/skills@skill-creator
 aux4 ai skills add ./my-local-skills
-aux4 ai skills add vercel-labs/agent-skills --skillsDir ./custom-skills
 ```
 
 For more details see [aux4 ai skills add](./commands/ai/skills/add).
@@ -56,7 +60,7 @@ For more details see [aux4 ai skills add](./commands/ai/skills/add).
 Remove an installed skill.
 
 ```bash
-aux4 ai skills remove <name> [--skillsDir <path>]
+aux4 ai skills remove <name>
 ```
 
 ```bash
@@ -70,7 +74,7 @@ For more details see [aux4 ai skills remove](./commands/ai/skills/remove).
 List all installed skills in the skills directory.
 
 ```bash
-aux4 ai skills list [--skillsDir <path>]
+aux4 ai skills list
 ```
 
 For more details see [aux4 ai skills list](./commands/ai/skills/list).
@@ -94,7 +98,7 @@ For more details see [aux4 ai skills find](./commands/ai/skills/find).
 Update all installed skills to their latest versions.
 
 ```bash
-aux4 ai skills update [--skillsDir <path>]
+aux4 ai skills update
 ```
 
 For more details see [aux4 ai skills update](./commands/ai/skills/update).
@@ -115,7 +119,7 @@ For more details see [aux4 ai skills init](./commands/ai/skills/init).
 
 ## Skills Directory
 
-By default, skills are installed into `./skills/`. This is compatible with `aux4/ai-agent`, which reads skills from the same directory.
+Skills are installed into `./skills/`. This is compatible with `aux4/ai-agent`, which reads skills from the same directory.
 
 ```
 my-project/
@@ -128,12 +132,6 @@ my-project/
 │   └── deploy/
 │       └── SKILL.md
 └── config.yaml
-```
-
-Override the default directory with `--skillsDir`:
-
-```bash
-aux4 ai skills add vercel-labs/agent-skills --skillsDir ./custom-path
 ```
 
 ## SKILL.md Format

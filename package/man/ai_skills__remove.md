@@ -1,15 +1,14 @@
 #### Description
 
-Remove an installed skill from the skills directory.
+Remove an installed skill from the `./skills/` directory.
 
 #### Usage
 
 ```bash
-aux4 ai skills remove <name> [--skillsDir <path>]
+aux4 ai skills remove <name>
 ```
 
 name        Name of the skill to remove (positional argument)
---skillsDir Directory where skills are installed (default: skills)
 
 #### Example
 
