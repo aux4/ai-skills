@@ -1,7 +1,7 @@
 {
   "scope": "aux4",
   "name": "ai-skills",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Install and manage AI agent skills from the open skills ecosystem",
   "license": "Apache-2.0",
   "tags": [
