@@ -51,7 +51,7 @@
         {
           "name": "add",
           "execute": [
-            "npx -y skills add ${source} --path ${skillsDir}"
+            "npx -y skills add ${source} --yes --agent openclaw"
           ],
           "help": {
             "text": "Install a skill from a repository or local path",
@@ -60,11 +60,6 @@
                 "name": "source",
                 "text": "Skill source (GitHub shorthand, URL, or local path)",
                 "arg": true
-              },
-              {
-                "name": "skillsDir",
-                "text": "Directory to install skills into",
-                "default": "skills"
               }
             ]
           }
@@ -72,7 +67,7 @@
         {
           "name": "remove",
           "execute": [
-            "npx -y skills remove ${name} --path ${skillsDir}"
+            "npx -y skills remove ${name} --yes --agent openclaw"
           ],
           "help": {
             "text": "Remove an installed skill",
@@ -81,11 +76,6 @@
                 "name": "name",
                 "text": "Name of the skill to remove",
                 "arg": true
-              },
-              {
-                "name": "skillsDir",
-                "text": "Directory where skills are installed",
-                "default": "skills"
               }
             ]
           }
@@ -93,17 +83,10 @@
         {
           "name": "list",
           "execute": [
-            "npx -y skills list --path ${skillsDir}"
+            "npx -y skills list --agent openclaw"
           ],
           "help": {
-            "text": "List installed skills",
-            "variables": [
-              {
-                "name": "skillsDir",
-                "text": "Directory where skills are installed",
-                "default": "skills"
-              }
-            ]
+            "text": "List installed skills"
           }
         },
         {
@@ -125,17 +108,10 @@
         {
           "name": "update",
           "execute": [
-            "npx -y skills update --path ${skillsDir}"
+            "npx -y skills update --yes --agent openclaw"
           ],
           "help": {
-            "text": "Update installed skills to latest versions",
-            "variables": [
-              {
-                "name": "skillsDir",
-                "text": "Directory where skills are installed",
-                "default": "skills"
-              }
-            ]
+            "text": "Update installed skills to latest versions"
           }
         },
         {
