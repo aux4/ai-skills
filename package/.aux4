@@ -1,5 +1,5 @@
 {
-  "scope": "aux4",
+  "scope": "community",
   "name": "ai-skills",
   "version": "1.0.3",
   "description": "Install and manage AI agent skills from the open skills ecosystem",

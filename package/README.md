@@ -1,4 +1,4 @@
-# aux4/ai-skills
+# community/ai-skills
 
 Install and manage AI agent skills from the open skills ecosystem ([skills.sh](https://skills.sh)). Skills are reusable instruction sets that enhance AI agents with procedural knowledge, packaged as `SKILL.md` files following the Open Agent Skills specification.
 
@@ -7,7 +7,7 @@ This package wraps the `skills` CLI to integrate with the aux4 ecosystem and ins
 ## Installation
 
 ```bash
-aux4 aux4 pkger install aux4/ai-skills
+aux4 aux4 pkger install community/ai-skills
 ```
 
 Requires Node.js (for `npx`).
